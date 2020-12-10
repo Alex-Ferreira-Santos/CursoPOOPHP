@@ -68,7 +68,7 @@ class Lutador{
         return $this->categoria;
     }
 
-    public function setCategoria(){
+    private function setCategoria(){
         if($this->getPeso()<52.2){
             $this->categoria = "Invalido";
         }
@@ -112,23 +112,34 @@ class Lutador{
     }
 
     public function apresentar(){
-
+        echo "Lutador: {$this->getNome()}<br>";
+        echo "Origem: {$this->getNacionalidade()}<br>";
+        echo "{$this->getIdade()} anos<br>";
+        echo "{$this->getAltura()} m de altura<br>";
+        echo "Pesando: {$this->getPeso()} kg<br>";
+        echo "Ganhou: {$this->getVitorias()}<br>";
+        echo "Perdeu: {$this->getDerrotas()}<br>";
+        echo "Empatou: {$this->getEmpates()}<br>";
     }
 
     public function status(){
-
+        echo "{$this->getNome()}<br>";
+        echo "é um peso {$this->getCategoria()}<br>";
+        echo "{$this->getVitorias()} vitorias<br>";
+        echo "{$this->getDerrotas()} derrotas<br>";
+        echo "{$this->getEmpates()} empates<br>";
     }
 
     public function ganharLuta(){
-
+        $this->setVitorias($this->getVitorias() + 1);
     }
 
     public function perderLuta(){
-
+        $this->setDerrotas($this->getDerrotas() + 1);
     }
 
     public function empatarLuta(){
-
+        $this->setEmpates($this->getEmpates() + 1);
     }
 
 }
