@@ -11,6 +11,18 @@ class Lutador{
     private $derrotas;
     private $empates;
 
+    public function __construct($nome,$nascionalidade,$idade,$altura,$peso,$vitorias,$derrotas,$empates){
+        $this->nome = $nome;
+        $this->nascionalidade = $nascionalidade;
+        $this->idade = $idade;
+        $this->altura = $altura;
+        $this->setPeso($peso);
+        $this->vitorias = $vitorias;
+        $this->derrotas = $derrotas;
+        $this->empates = $empates;
+
+    }
+
     public function getNome(){
         return $this->nome;
     }
@@ -49,14 +61,30 @@ class Lutador{
 
     public function setPeso($peso){
         $this->peso = $peso;
+        $this->setCategoria();
     }
 
     public function getCategoria(){
         return $this->categoria;
     }
 
-    public function setCategoria($categoria){
-        $this->categoria = $categoria;
+    public function setCategoria(){
+        if($this->getPeso()<52.2){
+            $this->categoria = "Invalido";
+        }
+        elseif($this->getPeso()<=70.3){
+            $this->categoria = "Leve";
+        }
+        elseif($this->getPeso()<=83.9){
+            $this->categoria = "Médio";
+        }
+        elseif($this->getPeso()<=120.2){
+            $this->categoria = "Pesado";
+        }
+        else{
+            $this->categoria = "Invalido";
+        }
+        
     }
 
     public function getVitorias(){
