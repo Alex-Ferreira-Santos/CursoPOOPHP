@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 14 POO</title>
+    <title>Aula 15 POO</title>
 </head>
 <body>
     <pre>
@@ -28,7 +28,6 @@
 
         print_r($vis);
         
-
     ?>
     </pre>
 </body>
